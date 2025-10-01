@@ -1,16 +1,62 @@
 :root {
-    background: #E3EDFB;
+  background: #e3edfb;
 
-    --color-icon: #0B3A67;
+  --color-icon: #0b3a67;
 
-    --image-width: 8rem;
-    --card-padding: 1rem;
+  --image-width: 8rem;
+  --card-padding: 1rem;
 
-    --font-heading: 1.75rem;
+  --font-heading: 1.75rem;
 
-    /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+  /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
+  --hide-overlay: 1;
 }
 
-
 /* Begynd her... */
+body {
+  max-width: 800px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(3, min-content);
+  gap: 10px;
+  padding: var(--card-padding);
+  width: 400px;
+  height: 167px;
+  margin: auto;
+  margin-top: 100px;
+
+  img {
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+    border-radius: 100%;
+    width: 100%;
+    place-self: center;
+  }
+  h1 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    color: var(--color-icon);
+    font-size: var(--font-heading);
+    place-self: end start;
+    font-weight: 800px;
+  }
+  h2 {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+  .flex {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    svg {
+      color: var(--color-icon);
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
