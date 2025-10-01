@@ -1,4 +1,23 @@
 article {
   margin-inline: auto;
   display: grid;
+
+  grid-template-columns:
+    [full-start] minmax(6vw, 1fr)
+    [quote-start] minmax(0, 5rem)
+    [content-start] min(50ch, 100% - 6vw * 2) [content-end]
+    minmax(0, 5rem) [quote-end]
+    minmax(6vw, 1fr) [full-end];
+
+  > * {
+    grid-column: content;
+  }
+
+  blockquote {
+    grid-column: quote;
+  }
+
+  img {
+    grid-column: full;
+  }
 }
